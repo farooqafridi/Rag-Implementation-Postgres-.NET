@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="Application/Application.csproj" />
   <Project Path="Domain/Domain.csproj" />
-  <Project Path="DoMgmtSystem/DoMgmtSystem.csproj" />
+  <Project Path="DoMgmtSystem/RAGPipeline.csproj" />
   <Project Path="Infrastructure/Infrastructure.csproj" />
 </Solution>
