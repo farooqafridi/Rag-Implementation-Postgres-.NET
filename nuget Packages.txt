@@ -1,0 +1,11 @@
+dotnet add DocumentManagement.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL
+
+dotnet add DocumentManagement.Infrastructure package Pgvector.EntityFrameworkCore
+
+dotnet add DocumentManagement.Infrastructure package Microsoft.EntityFrameworkCore.Design
+
+dotnet add DocumentManagement.Infrastructure package Microsoft.Extensions.Http
+
+dotnet add DocumentManagement.Infrastructure package UglyToad.PdfPig
+
+dotnet add DocumentManagement.Infrastructure package DocumentFormat.OpenXml

@@ -1,0 +1,144 @@
+
+# ==========================================
+# .NET Build Output
+# ==========================================
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+
+# ==========================================
+# Visual Studio
+# ==========================================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# ==========================================
+# Visual Studio Code
+# ==========================================
+.vscode/
+!.vscode/extensions.json
+
+# ==========================================
+# Rider / JetBrains
+# ==========================================
+.idea/
+*.sln.iml
+
+# ==========================================
+# .NET Generated Files
+# ==========================================
+project.lock.json
+project.fragment.lock.json
+artifacts/
+TestResults/
+coverage/
+coverage.xml
+*.coverage
+*.coveragexml
+
+# ==========================================
+# NuGet
+# ==========================================
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# ==========================================
+# AppSettings / Configuration / Secrets
+# ==========================================
+appsettings.json
+appsettings.*.json
+!appsettings.example.json
+
+# User Secrets (normally stored outside the project)
+secrets.json
+
+# ==========================================
+# Uploaded Documents / RAG Files
+# ==========================================
+Uploads/
+uploads/
+Upload/
+upload/
+
+# Document storage / processing temp files
+DocumentStorage/
+TempDocuments/
+ProcessedDocuments/
+
+# ==========================================
+# Logs
+# ==========================================
+logs/
+Logs/
+*.log
+
+# ==========================================
+# Temporary Files
+# ==========================================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ==========================================
+# OS Files
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Docker / Local Overrides
+# ==========================================
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# ==========================================
+# Database / Local Data Files
+# ==========================================
+*.mdf
+*.ldf
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Azure / Local Development
+# ==========================================
+.azure/
+.azure-devops/local/
+
+# ==========================================
+# Python (if used for AI experiments)
+# ==========================================
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+.envrc
+
+# ==========================================
+# Node / Angular (if applicable)
+# ==========================================
+node_modules/
+dist/
+.angular/

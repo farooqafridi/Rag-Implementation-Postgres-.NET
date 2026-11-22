@@ -1,0 +1,26 @@
+
+Method	Endpoint	Description
+POST	/api/documents/upload	Upload document
+GET	/api/documents	Get document list
+GET	/api/documents/{id}	Document details
+DELETE	/api/documents/{id}	Delete document
+POST	/api/documents/{id}/reindex	Regenerate embeddings
+POST	/api/rag/ask	Ask questions using RAG
+POST	/api/rag/search	Semantic search without LLM
+GET	/api/rag/documents/{id}/chunks	View indexed chunks
+
+
+18. Production architecture improvements
+The implementation above is our initial working prototype. Before deploying it for an enterprise DMS, I would address these areas.
+Area	Production implementation
+Background processing	.NET Worker Service
+Document storage	Azure Blob Storage
+OCR	Azure Document Intelligence or local OCR
+Security	ASP.NET Core Identity + JWT
+Authorization	Document-level permissions
+Multi-tenancy	TenantId on documents and chunks
+Search	Hybrid search (keyword + vector)
+Performance	HNSW + batch embedding
+Reliability	Retry policies and failed-job handling
+Monitoring	Structured logging and processing metrics
+Re-indexing	Track embedding model and version

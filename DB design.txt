@@ -1,0 +1,39 @@
+dotnet ef database update --project DocumentManagement.Infrastructure --startup-project DocumentManagement.Api
+
+dotnet ef migrations add InitialDocumentSchema --project DocumentManagement.Infrastructure --startup-project DocumentManagement.Api
+
+
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE documents
+(
+    id UUID PRIMARY KEY,
+    file_name VARCHAR(500) NOT NULL,
+    content_type VARCHAR(100),
+    storage_path TEXT NOT NULL,
+    extracted_text TEXT,
+    status VARCHAR(30) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE document_chunks
+(
+    id UUID PRIMARY KEY,
+    document_id UUID NOT NULL
+        REFERENCES documents(id) ON DELETE CASCADE,
+
+    content TEXT NOT NULL,
+    chunk_index INT NOT NULL,
+    page_number INT,
+
+    embedding VECTOR(1024) NOT NULL,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX ix_document_chunks_document_id
+ON document_chunks(document_id);
+
+CREATE INDEX ix_document_chunks_embedding
+ON document_chunks
+USING hnsw (embedding vector_cosine_ops);
